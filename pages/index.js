@@ -1,9 +1,23 @@
 import React from 'react';
+import Template from '../components/template/Template';
+import Users from '../components/users/Users';
 
-const Index = () => {
+import fetch from "isomorphic-fetch";
+
+const Index = (props) => {
+    console.log(props)
     return(
-        <h1>Hello World</h1>
+        <Template>
+            <Users users={props.users} />
+        </Template>
     )
+}
+
+Index.getInitialProps = async (ctx) => {
+    const response = await fetch('https://reqres.in/api/users')
+    const resJSON = await response.json()
+
+    return {users: resJSON.data}
 }
 
 export default Index;

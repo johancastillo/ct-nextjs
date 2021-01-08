@@ -1,8 +1,11 @@
 import React from 'react';
+import Template from '../components/template/Template';
 
 const Contact = () => {
-    return (
-        <h1>About</h1>
+    return(
+        <Template>
+            <h1>Contact</h1>
+        </Template>
     )
 }
 
