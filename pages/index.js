@@ -5,7 +5,6 @@ import Users from '../components/users/Users';
 import fetch from "isomorphic-fetch";
 
 const Index = (props) => {
-    console.log(props)
     return(
         <Template>
             <Users users={props.users} />
